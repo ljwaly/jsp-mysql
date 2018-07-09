@@ -176,6 +176,12 @@
 			<artifactId>IKAnalyzer</artifactId>
 			<version>6.4.0</version>
 		</dependency>
+		
+		<dependency>
+			<groupId>com.ljw</groupId>
+			<artifactId>jsp-ik-analyzer</artifactId>
+			<version>1.0</version>
+		</dependency>
 
 		<dependency>
 			<groupId>org.scala-lang</groupId>

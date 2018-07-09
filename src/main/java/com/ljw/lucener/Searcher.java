@@ -63,7 +63,7 @@ public class Searcher {
 
 	public static void main(String[] args) throws IOException, ParseException {
 		String indexDir = "D:/lucene_index";
-		String query = "备份";
+		String query = "李金悟";
 		search(indexDir, query);
 	}
 }
