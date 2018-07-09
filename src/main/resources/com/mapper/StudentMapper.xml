@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper  
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"  
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">  
+  
+<mapper namespace="com.ljw.dao.EmpDao">
+	
+	<!-- 查询全部员工 -->
+	<select id="findAll" resultType="com.ljw.dao.entity.Emp">
+		select * from t_emp
+	</select>
+	
+	
+	<select id="findByName" 
+		parameterType="java.lang.String"
+		resultType="com.ljw.dao.entity.Emp">
+		select * from t_emp where ename=#{ename}
+		
+	</select>
+	
+</mapper> 
