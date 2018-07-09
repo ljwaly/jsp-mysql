@@ -123,6 +123,16 @@ public class Indexer {
 		return doc;
 	}
 
+	
+	/**
+	 * 
+	 * 对需要的搜索的内容进行索引创建
+	 * 
+	 * 如果需要使用搜索的内容，先运行此程序，创建搜索目标文件的索引
+	 * 
+	 * @param args
+	 * @throws IOException
+	 */
 	public static void main(String[] args) throws IOException {
 		
 		

@@ -17,8 +17,18 @@ import org.apache.lucene.store.Directory;
 import org.apache.lucene.store.FSDirectory;
 import org.wltea.analyzer.lucene.IKAnalyzer;
 
+/**
+ * 
+ * 索引工具类，使用这个类，调用索引
+ * 
+ * @author ljw 
+ *
+ */
 public class Searcher {
 
+	/**
+	 * 如果使用这个方法，修改此方法，把需要的结果进行整理
+	 */
 	public static void search(String indexDir, String query) throws IOException, ParseException {
 		Directory dir = FSDirectory.open(Paths.get(indexDir));
 		IndexSearcher searcher = new IndexSearcher(DirectoryReader.open(dir));
@@ -37,19 +47,23 @@ public class Searcher {
 		long end = System.currentTimeMillis();
 		
 		
-		
+		//搜索条数
 		System.out.println(hits.totalHits);
+		
+		//使用时间
 		System.out.println(end - start);
 		
 		for (ScoreDoc scoreDoc : hits.scoreDocs) {
 			Document doc = searcher.doc(scoreDoc.doc);
+			//搜索结果全路径
 			System.out.println(doc.get("fullpath"));
+			
 		}
 	}
 
 	public static void main(String[] args) throws IOException, ParseException {
 		String indexDir = "D:/lucene_index";
-		String query = "西村";
+		String query = "备份";
 		search(indexDir, query);
 	}
 }
